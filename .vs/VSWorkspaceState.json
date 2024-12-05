@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\API",
+    "\\AppClient",
+    "\\AppClient\\AppClient",
+    "\\AppClient\\AppClient\\Views",
+    "\\AppClient\\AppClient\\Views\\Books"
+  ],
+  "SelectedNode": "\\AppClient\\AppClient\\Views\\Books\\Edit.cshtml",
+  "PreviewInSolutionExplorer": false
+}

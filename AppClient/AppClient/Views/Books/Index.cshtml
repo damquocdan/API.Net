@@ -1,0 +1,159 @@
+﻿@model IEnumerable<AppClient.Models.Book>
+
+@{
+    ViewData["Title"] = "Danh sách sách";
+}
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #343a40;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        font-weight: bold;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-weight: bold;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        font-weight: bold;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    .table {
+        margin-top: 20px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .table thead {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .form-inline .form-control {
+        width: 300px;
+    }
+
+    .form-inline .btn {
+        margin-left: 5px;
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+
+</style>
+
+<h1 class="text-center my-4">Quản lý thông tin sách</h1>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <a href="@Url.Action("Create", "Books")" class="btn btn-success">Thêm mới</a>
+    <form method="get" asp-action="Search" class="form-inline">
+        <div class="form-group">
+            <input type="hidden" class="form-control mr-2" name="keyword" placeholder="Search by name" />
+        </div>
+        <button type="submit" class="btn btn-primary">reset</button>
+    </form>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã độc giả</th>
+            <th>Tên độc giả</th>
+            <th>Số điện thoại</th>
+            <th>Ngày mượn sách</th>
+            <th>Sách mượn</th>
+            <th>Ngày trả sách</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.BookCode</td>
+                <td>@book.Author</td>
+                <td>@book.Category</td>
+                <td>@book.PublishDate</td>
+                <td>@book.BookName</td>
+                <td>@book.Publisher</td>
+                <td>
+                    <button onclick="fetchBookDetails('@book.Id')" class="btn btn-info btn-sm">Chi tiết</button>
+                    <a href="@Url.Action("Edit", "Books", new { id = book.Id })" class="btn btn-primary btn-sm">Sửa</a>
+                    <form method="post" asp-action="Delete" asp-route-id="@book.Id" style="display:inline;" onsubmit="return confirm('Bạn có muốn xoá không?');">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger btn-sm">Xoá</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div id="modalContainer"></div>
+<script>
+    function fetchBookDetails(bookId) {
+        fetch(`/Books/GetBookDetails?id=${bookId}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Failed to load book details');
+                }
+            })
+            .then(html => {
+                document.getElementById('modalContainer').innerHTML = html;
+                document.getElementById('bookDetailsModal').style.display = 'block';
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+    }
+
+    function closeModal() {
+        document.getElementById('bookDetailsModal').style.display = 'none';
+    }
+</script>

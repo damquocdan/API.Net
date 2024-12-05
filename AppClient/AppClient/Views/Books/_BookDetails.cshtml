@@ -1,0 +1,16 @@
+﻿@model AppClient.Models.Book
+
+<div id="bookDetailsModal" style="display: none;">
+    <div style="background: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <div style="background: #fff; padding: 20px; border-radius: 10px; width: 400px;">
+            <h3>Thông tin chi tiết</h3>
+            <p><strong>Mã độc giả:</strong> @Model.BookCode</p>
+            <p><strong>Tên độc giả:</strong> @Model.Author</p>
+            <p><strong>Số điện thoại:</strong> @Model.Category</p>
+            <p><strong>Ngày mượn sách:</strong> @Model.PublishDate</p>
+            <p><strong>Sách mượn:</strong> @Model.BookName</p>
+            <p><strong>Ngày trả sách:</strong> @Model.Publisher</p>
+            <button onclick="closeModal()" style="background: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Đóng</button>
+        </div>
+    </div>
+</div>
