@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DamQuocDan_82\\API\\API\\API.csproj": {}
+    "E:\\API.Net\\API\\API\\API.csproj": {}
   },
   "projects": {
-    "E:\\DamQuocDan_82\\API\\API\\API.csproj": {
+    "E:\\API.Net\\API\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DamQuocDan_82\\API\\API\\API.csproj",
+        "projectUniqueName": "E:\\API.Net\\API\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "E:\\DamQuocDan_82\\API\\API\\API.csproj",
+        "projectPath": "E:\\API.Net\\API\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Dam Quoc Dan\\.nuget\\packages\\",
-        "outputPath": "E:\\DamQuocDan_82\\API\\API\\obj\\",
+        "outputPath": "E:\\API.Net\\API\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

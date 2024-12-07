@@ -2,11 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\API",
+    "\\API\\API",
+    "\\API\\API\\Controllers",
     "\\AppClient",
     "\\AppClient\\AppClient",
     "\\AppClient\\AppClient\\Views",
     "\\AppClient\\AppClient\\Views\\Books"
   ],
-  "SelectedNode": "\\AppClient\\AppClient\\Views\\Books\\Edit.cshtml",
+  "SelectedNode": "\\API\\API\\Controllers\\BooksController.cs",
   "PreviewInSolutionExplorer": false
 }

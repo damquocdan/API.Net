@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mnUZTcipNZaOhd2Eh8EWkp2IMiGLuWc8UXNSpJER6b2M/5Uw3C+/RkfnazjVmwKYAi4RN/VEqPN8LB9xyTjvow==",
+  "dgSpecHash": "YCYZ0tAOT4fCNQeet9uPEI6gBUZwrIl0C6egm2ni/Rb9uFL9JqRMS6xUE8n3quiTU4RAU4wtqRv+Ur3ItZBTmw==",
   "success": true,
-  "projectFilePath": "E:\\DamQuocDan_82\\API\\API\\API.csproj",
+  "projectFilePath": "E:\\API.Net\\API\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dam Quoc Dan\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Dam Quoc Dan\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
